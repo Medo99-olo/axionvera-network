@@ -106,6 +106,21 @@ Current capabilities include:
 - environment checks
 - serialization tests
 
+#### Configuration
+
+The network-node crate uses environment variables for configuration. See `.env.example` for the supported configuration fields:
+
+- `AXIONVERA_NETWORK_NAME` - Target network (`local`, `testnet`, `mainnet`, `futurenet`)
+- `AXIONVERA_RPC_URL` - Soroban RPC endpoint URL
+- `AXIONVERA_ENVIRONMENT` - Deployment environment (`development`, `staging`, `production`)
+
+To set up local configuration:
+
+```bash
+cp .env.example .env
+# Edit .env with your values
+```
+
 ---
 
 ## Quality Standard
@@ -198,6 +213,34 @@ Common reasons a PR fails CI:
 - A compilation error was introduced. Run `cargo check --workspace --all-targets` and fix all errors.
 
 For full details on each check, how to reproduce failures locally, and how to fix them, see [docs/ci-and-local-checks.md](./docs/ci-and-local-checks.md).
+
+---
+
+## Building the Vault Contract
+
+The vault contract can be built as a WASM binary for deployment using the provided build script.
+
+### Build Script
+
+A repeatable build script is provided at `scripts/build-vault-wasm.sh`.
+
+To build the vault contract WASM:
+
+```bash
+./scripts/build-vault-wasm.sh
+```
+
+The script will:
+- Check that the wasm32-unknown-unknown target is installed (add it if missing)
+- Build the vault contract for the wasm32 target in release mode
+- Output the WASM file location on success
+
+The built WASM file will be located at:
+```
+contracts/vault-contract/target/wasm32-unknown-unknown/release/axionvera_vault_contract.wasm
+```
+
+If the contract directory is missing or the build fails, the script will exit with a clear error message.
 
 ---
 
