@@ -1,0 +1,7 @@
+{
+  "network": "testnet",
+  "vaultContractId": "PLACEHOLDER_VAULT_CONTRACT_ID",
+  "wasmHash": "PLACEHOLDER_WASM_HASH",
+  "deployerAddress": "PLACEHOLDER_DEPLOYER_ADDRESS",
+  "deployedAt": "PLACEHOLDER_DEPLOYED_AT"
+}

@@ -1,0 +1,7 @@
+{
+  "network": "testnet",
+  "rpcUrl": "https://soroban-testnet.stellar.org",
+  "vaultContractId": "PLACEHOLDER_VAULT_CONTRACT_ID",
+  "depositTokenContractId": "PLACEHOLDER_DEPOSIT_TOKEN_CONTRACT_ID",
+  "rewardTokenContractId": "PLACEHOLDER_REWARD_TOKEN_CONTRACT_ID"
+}
